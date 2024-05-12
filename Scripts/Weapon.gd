@@ -19,6 +19,6 @@ func _physics_process(_delta):
 		bullet_instance.global_position = $Marker2D.global_position
 		get_parent().add_child(bullet_instance)
 		can_fire = false
-		await(get_tree().create_timer(0.2))
+		await(get_tree().create_timer(0.2).timeout)
 		can_fire = true
 	
