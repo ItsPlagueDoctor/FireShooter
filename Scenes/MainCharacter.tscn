@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8gl4uumt68j"]
+[gd_scene load_steps=5 format=3 uid="uid://c8gl4uumt68j"]
 
 [ext_resource type="Script" path="res://MainCharacter.gd" id="1_k02uv"]
 [ext_resource type="Texture2D" uid="uid://dntbq40dpn8ea" path="res://sprite/Sprite-0002.png" id="2_3ady5"]
-[ext_resource type="Script" path="res://Scripts/Weapon.gd" id="3_0dmfd"]
-[ext_resource type="Texture2D" uid="uid://cenx6el5ycdn5" path="res://sprite/Sprite-0003.png" id="3_6fbbn"]
+[ext_resource type="PackedScene" uid="uid://cx7u4funjut4n" path="res://Scenes/flameThrower.tscn" id="3_04pdh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itbwg"]
 size = Vector2(12, 15)
@@ -22,12 +21,4 @@ shape = SubResource("RectangleShape2D_itbwg")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="Weapon" type="Sprite2D" parent="."]
-position = Vector2(4, -5.96046e-08)
-scale = Vector2(0.710025, 0.670165)
-texture = ExtResource("3_6fbbn")
-script = ExtResource("3_0dmfd")
-
-[node name="Marker2D" type="Marker2D" parent="Weapon"]
-position = Vector2(8.19662, -0.539146)
-scale = Vector2(-8.30527, 1)
+[node name="flameThrower" parent="." instance=ExtResource("3_04pdh")]

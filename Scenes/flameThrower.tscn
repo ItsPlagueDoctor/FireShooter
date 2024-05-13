@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx7u4funjut4n"]
+
+[ext_resource type="Texture2D" uid="uid://cenx6el5ycdn5" path="res://sprite/Sprite-0003.png" id="1_ggpu8"]
+[ext_resource type="Script" path="res://Scripts/Weapon.gd" id="2_d3mcf"]
+
+[node name="flameThrower" type="Sprite2D"]
+position = Vector2(4, -5.96046e-08)
+scale = Vector2(0.710025, 0.670165)
+texture = ExtResource("1_ggpu8")
+script = ExtResource("2_d3mcf")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(8.19662, -0.539146)
+scale = Vector2(-8.30527, 1)

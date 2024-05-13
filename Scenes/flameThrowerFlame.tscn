@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://cghuci40wghpr"]
+[gd_scene load_steps=4 format=3 uid="uid://cghuci40wghpr"]
 
-[node name="Area2D" type="Area2D"]
+[ext_resource type="Script" path="res://flameThrowerFlame.gd" id="1_mt0vy"]
+[ext_resource type="Texture2D" uid="uid://bnfwf8v1l6v2b" path="res://icon.svg" id="2_f6g88"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gk3g"]
+size = Vector2(18, 18)
+
+[node name="FlameThrowerFlame" type="Area2D"]
+script = ExtResource("1_mt0vy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(34, -2.38419e-07)
+scale = Vector2(0.136719, 0.138672)
+texture = ExtResource("2_f6g88")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34, 0)
+shape = SubResource("RectangleShape2D_3gk3g")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(34, -2.98023e-08)
+scale = Vector2(0.75, 0.75)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
