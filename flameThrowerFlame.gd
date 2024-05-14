@@ -12,7 +12,7 @@ func _process(delta):
 	position += velocity * delta  # Move the bullet based on the updated velocity
 	position += Vector2.RIGHT.rotated(rotation) * speed * delta
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	await(get_tree().create_timer(0.01).timeout)
 	set_physics_process(false)
 	
