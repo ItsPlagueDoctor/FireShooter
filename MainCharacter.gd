@@ -17,6 +17,7 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move left", "move right")
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		anim.play("jumpstate") 
 	elif is_on_floor() and not direction:
 		anim.play("idle") 
 	# Handle jump.
@@ -32,8 +33,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			anim.play("run") 
 		else:
-			anim.stop()
-			anim.play("jump")
+			anim.play("jumpstate")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
