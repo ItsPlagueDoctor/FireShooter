@@ -1822,9 +1822,3 @@ zoom = Vector2(3, 3)
 
 [node name="Enemy" parent="." instance=ExtResource("5_ws0qb")]
 position = Vector2(410, -177)
-
-[node name="Enemy2" parent="." instance=ExtResource("5_ws0qb")]
-position = Vector2(351, -219)
-
-[node name="Enemy3" parent="." instance=ExtResource("5_ws0qb")]
-position = Vector2(299, -168)

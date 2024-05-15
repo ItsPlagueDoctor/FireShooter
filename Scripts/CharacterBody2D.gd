@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 500
+const speed = 200
 const jump = -500
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_chase = false
@@ -22,7 +22,8 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	if player_chase:
-		position +=(mainCharacter.position - position)/speed
+		velocity = (mainCharacter.position - position).normalized() * speed
+		velocity = position.direction_to(mainCharacter.position) * speed
 	move_and_slide()
 	
 
@@ -41,7 +42,6 @@ func damage():
 
 
 func _on_area_2d_area_entered(area):
-	print(area.name)
 	if area.name == "FlameThrowerFlame":
 		weapon_name = "Flamethrower"
 		print(weapon_name, " bullet has hit enemy")

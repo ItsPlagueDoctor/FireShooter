@@ -4,6 +4,10 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+var inAttackRange = false
+var attackCoolDown = true
+
+var health = 100
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -27,3 +31,34 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	enemyAttack()
+	if health <= 0:
+		self.queue_free()
+		get_tree().reload_current_scene()
+		
+		
+
+
+
+func _on_hit_box_body_entered(body):
+	print(body.name)
+	if body.name == "Enemy":
+		inAttackRange = true
+
+
+func _on_hit_box_body_exited(body):
+	inAttackRange = false
+	
+	
+func enemyAttack():
+	if inAttackRange and attackCoolDown:
+		health = health - 20
+		attackCoolDown = false
+		$CoolDown.start()
+		print(health)
+		print("Player - 10 health")
+	
+
+
+func _on_cool_down_timeout():
+	attackCoolDown = true
