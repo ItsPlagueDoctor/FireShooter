@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dv8lffem86qon"]
+[gd_scene load_steps=11 format=3 uid="uid://dv8lffem86qon"]
 
 [ext_resource type="Texture2D" uid="uid://bkq0drkrdo10s" path="res://Tileset_pack/Light_Bricks_tileset.png" id="1_f3ph5"]
 [ext_resource type="Texture2D" uid="uid://buchkf0i5awv5" path="res://Tileset_pack/Light_Gloomy_Ground_tileset.png" id="2_hfs36"]
 [ext_resource type="Texture2D" uid="uid://bmuyex6rejv1h" path="res://Tileset_pack/Water_tileset.png" id="3_eyrax"]
 [ext_resource type="PackedScene" uid="uid://c8gl4uumt68j" path="res://Scenes/MainCharacter.tscn" id="4_yjppi"]
 [ext_resource type="PackedScene" uid="uid://ca2cafgmhaj0c" path="res://Scenes/enemy.tscn" id="5_ws0qb"]
+[ext_resource type="Texture2D" uid="uid://chjxpnq8urhd2" path="res://sprite/city-0003.png" id="6_lok0e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lok2"]
 texture = ExtResource("1_f3ph5")
@@ -1828,3 +1829,13 @@ position = Vector2(351, -219)
 
 [node name="Enemy3" parent="." instance=ExtResource("5_ws0qb")]
 position = Vector2(299, -168)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(197, 38)
+scale = Vector2(0.915039, 0.915039)
+texture = ExtResource("6_lok0e")

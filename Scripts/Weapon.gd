@@ -18,10 +18,10 @@ func _physics_process(_delta):
 
 	if Input.is_action_pressed("shoot") and can_fire:
 		var flame_instance = flameThrowerFlame.instantiate()
-		flame_instance.rotation = rotation
+		flame_instance.rotation = rotation+randf_range(0, 0.1)
 		flame_instance.global_position = $Marker2D.global_position
 		get_parent().add_child(flame_instance)
 		can_fire = false
-		await(get_tree().create_timer(0.2).timeout)
+		await(get_tree().create_timer(0.01).timeout)
 		can_fire = true
 	
