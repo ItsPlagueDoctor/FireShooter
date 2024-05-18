@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Fire Shooter"
-run/main_scene="res://game.tscn"
+run/main_scene="res://Levels/level_1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Fire Shooter"
 
 [input]
 

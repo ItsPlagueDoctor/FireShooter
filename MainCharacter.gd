@@ -49,7 +49,6 @@ func _physics_process(delta):
 
 
 func _on_hit_box_body_entered(body):
-	print(body.name)
 	if body.name == "Enemy":
 		inAttackRange = true
 

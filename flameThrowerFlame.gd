@@ -1,18 +1,27 @@
 extends Area2D
 
 const bulletdrop = 500
-const speed = 400
+var speed = 400
 var velocity = Vector2.ZERO
 var mark = preload("res://Scenes/mark.tscn")
 @onready var anim = $Sprite2D
+
+var flameThrowerRangeLvl = 2
+
 func _ready():
 	set_as_top_level(true)
 	anim.set_frame_and_progress(0, randf_range(0, 1))
 	
 func _process(delta):
-	velocity.y += gravity * delta  # Apply gravity to the velocity
-	position += velocity * delta  # Move the bullet based on the updated velocity
-	position += Vector2.RIGHT.rotated(rotation) * speed * delta
+	if flameThrowerRangeLvl == 1:
+		velocity.y += gravity * delta  # Apply gravity to the velocity
+		position += velocity * delta  # Move the bullet based on the updated velocity
+		position += Vector2.RIGHT.rotated(rotation) * speed * delta
+	elif flameThrowerRangeLvl == 2:
+		speed = 600
+		velocity.y += gravity * delta  # Apply gravity to the velocity
+		position += velocity * delta  # Move the bullet based on the updated velocity
+		position += Vector2.RIGHT.rotated(rotation) * speed * delta
 	
 func _physics_process(_delta):
 	await(get_tree().create_timer(0.01).timeout)

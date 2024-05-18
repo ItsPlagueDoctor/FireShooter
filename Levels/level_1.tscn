@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv8lffem86qon"]
+
+[ext_resource type="PackedScene" uid="uid://jgop248jmwb5" path="res://Scenes/tile_mapBasic.tscn" id="1_1e4p4"]
+[ext_resource type="PackedScene" uid="uid://c8gl4uumt68j" path="res://Scenes/MainCharacter.tscn" id="2_6apdl"]
+[ext_resource type="PackedScene" uid="uid://ca2cafgmhaj0c" path="res://Scenes/enemy.tscn" id="3_440bm"]
+[ext_resource type="Texture2D" uid="uid://chjxpnq8urhd2" path="res://sprite/city-0003.png" id="4_qre07"]
+[ext_resource type="PackedScene" uid="uid://c0t38c004cgx2" path="res://Scenes/next_level.tscn" id="5_x3jdk"]
+
+[node name="level_1" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_1e4p4")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_6apdl")]
+position = Vector2(27, -25)
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(7, 19)
+zoom = Vector2(3, 3)
+
+[node name="Enemy" parent="." instance=ExtResource("3_440bm")]
+position = Vector2(410, -177)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(165, 23)
+texture = ExtResource("4_qre07")
+
+[node name="nextLevel" parent="." instance=ExtResource("5_x3jdk")]
+position = Vector2(532, -228)

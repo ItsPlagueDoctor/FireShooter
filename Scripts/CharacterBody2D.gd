@@ -5,6 +5,8 @@ const jump = -500
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_chase = false
 
+var weapon_dmg_lvl = 1
+
 var motion = Vector2()
 
 var move = true
