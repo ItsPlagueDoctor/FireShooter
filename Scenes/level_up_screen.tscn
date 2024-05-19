@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceu5qtl7iardi"]
+
+[ext_resource type="Script" path="res://Scripts/level_up_screen.gd" id="1_rata0"]
+
+[node name="LevelUpScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 405.0
+offset_top = 284.0
+offset_right = 190.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rata0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 305.0
+offset_bottom = 46.0
+text = "flameThrower range
+Dmg
+Double jump unlock"
+
+[node name="FlameThrowerRange" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.006
+offset_left = 168.0
+offset_top = 3.0
+offset_right = 184.894
+offset_bottom = 33.55
+text = "+"
+
+[node name="DoubleJump" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.006
+offset_left = 163.0
+offset_top = 52.0
+offset_right = 172.936
+offset_bottom = 79.112
+text = "+"
+
+[node name="Dmg" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.006
+offset_left = 46.0
+offset_top = 26.0
+offset_right = 55.936
+offset_bottom = 53.112
+text = "+"
+
+[node name="Continue" type="Button" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 131.0
+offset_right = 120.0
+offset_bottom = 162.0
+text = "Continue"
+
+[connection signal="pressed" from="Dmg" to="." method="_on_dmg_pressed"]
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

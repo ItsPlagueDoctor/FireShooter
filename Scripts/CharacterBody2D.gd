@@ -5,7 +5,6 @@ const jump = -500
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_chase = false
 
-var weapon_dmg_lvl = 1
 
 var motion = Vector2()
 
@@ -47,7 +46,10 @@ func _on_area_2d_area_entered(area):
 	if area.name == "FlameThrowerFlame":
 		weapon_name = "Flamethrower"
 		print(weapon_name, " bullet has hit enemy")
-		weapon_dmg = 2
+		if GlobalVar.weapon_dmg_lvl == 1:
+			weapon_dmg = 2
+		elif GlobalVar.weapon_dmg_lvl == 2:
+			weapon_dmg = 4
 		damage()
 	
 
