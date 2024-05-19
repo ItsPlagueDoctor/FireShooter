@@ -6,11 +6,15 @@ const JUMP_VELOCITY = -400.0
 var inAttackRange = false
 var attackCoolDown = true
 
-var health = 100
+var paused = false
 
+var health = 100
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = $Sprite2D
+@onready var pause_menu = $Camera2D/pauseMenu
+func _ready():
+	pause_menu.hide()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -44,6 +48,10 @@ func _physics_process(delta):
 		self.queue_free()
 		get_tree().reload_current_scene()
 		
+	if Input.is_action_just_pressed("Pause"):
+		pauseMenu()
+
+			
 		
 
 
@@ -69,3 +77,13 @@ func enemyAttack():
 
 func _on_cool_down_timeout():
 	attackCoolDown = true
+
+
+func pauseMenu():
+	paused = !paused
+	if paused:
+		pause_menu.show()
+		Engine.time_scale = 0
+	else:
+		pause_menu.hide()
+		Engine.time_scale = 1

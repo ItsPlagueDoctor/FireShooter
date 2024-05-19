@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8gl4uumt68j"]
+[gd_scene load_steps=18 format=3 uid="uid://c8gl4uumt68j"]
 
 [ext_resource type="Script" path="res://MainCharacter.gd" id="1_k02uv"]
+[ext_resource type="PackedScene" uid="uid://bit8lxu18q8rw" path="res://Scenes/pause_menu.tscn" id="2_3thny"]
 [ext_resource type="PackedScene" uid="uid://cx7u4funjut4n" path="res://Scenes/flameThrower.tscn" id="3_04pdh"]
 [ext_resource type="Texture2D" uid="uid://b1ct61vrnn6cd" path="res://sprite/Spriteeee-0002.png" id="3_ejsxo"]
 [ext_resource type="Texture2D" uid="uid://bu7txdjy503bw" path="res://sprite/Spriteeee-0003.png" id="4_i46r1"]
@@ -87,7 +88,10 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_itbwg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-31, -32)
 zoom = Vector2(3, 3)
+
+[node name="pauseMenu" parent="Camera2D" instance=ExtResource("2_3thny")]
 
 [node name="flameThrower" parent="." instance=ExtResource("3_04pdh")]
 
