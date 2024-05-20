@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="Fire Shooter"
-run/main_scene="res://Levels/level_1.tscn"
+run/main_scene="res://start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalVar="*res://Scripts/GlobalVar.gd"
+
+[display]
+
+window/size/mode=4
+mouse_cursor/custom_image="res://sprite/Sprite-0003.png"
 
 [dotnet]
 

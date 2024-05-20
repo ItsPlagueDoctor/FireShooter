@@ -4,9 +4,16 @@ const speed = 200
 const jump = -500
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_chase = false
+var wander_movment_ready = true
+@onready var timer = $Timer
+@onready var timer_2 = $Timer2
 
+@onready var health_label = $Health
+@onready var health_bar = $HealthBar
+
+var moving = false
 var motion = Vector2()
-
+var wander_movment_ready2 = true
 var move = true
 var direction1 = 1
 var alive = true
@@ -16,6 +23,10 @@ var health = 10
 var can_take_health = true
 var weapon_name = " "
 var weapon_dmg = 0
+
+func _ready():
+	health_label.text = str(health)
+	health_bar.value = health
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -30,8 +41,12 @@ func _physics_process(delta):
 		velocity.x = direction.normalized().x * speed
 		#velocity = (mainCharacter.position - position).normalized() * speed
 		#velocity = position.direction_to(mainCharacter.position) * speed
+	else: 
+		velocity.x = 0
+		
+		
+		
 	move_and_slide()
-	
 
 func damage():
 	if can_take_health:
@@ -44,6 +59,8 @@ func damage():
 					print("enemy has died")
 			elif health >  0:
 				print(health)
+				health_label.text = str(health)
+				health_bar.value = health
 			
 
 
@@ -59,11 +76,19 @@ func _on_area_2d_area_entered(area):
 	
 
 func _on_detection_area_body_entered(body):
-	mainCharacter = body
-	player_chase = true
+	if body.has_method("MainCharacter"):
+		mainCharacter = body
+		player_chase = true
 	
 	
 
 
 func _on_detection_area_body_exited(body):
-	player_chase = false
+	if body.has_method("MainCharacter"):
+		player_chase = false
+	
+func enemy():
+	pass
+	
+	
+	

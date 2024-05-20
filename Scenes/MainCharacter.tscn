@@ -19,7 +19,7 @@
 size = Vector2(16, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5egb"]
-size = Vector2(16, 23)
+size = Vector2(18, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_elylx"]
 animations = [{
@@ -107,6 +107,23 @@ shape = SubResource("RectangleShape2D_x5egb")
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_elylx")
 animation = &"idle"
+
+[node name="Health" type="Label" parent="."]
+offset_left = -11.0
+offset_top = -39.0
+offset_right = 29.0
+offset_bottom = -16.0
+scale = Vector2(0.5, 0.5)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0.234922, 0.752859, 0.373472, 1)
+offset_left = -13.0
+offset_top = -23.0
+offset_right = 77.0
+offset_bottom = 4.0
+scale = Vector2(0.3, 0.3)
+step = 5.0
+show_percentage = false
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="HitBox" to="." method="_on_hit_box_body_exited"]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://sereh0jaulg7"]
+
+[ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_dhu85"]
+
+[node name="Start_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 564.0
+offset_top = 317.0
+offset_right = 564.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dhu85")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 74.0
+offset_right = 389.0
+offset_bottom = 97.0
+text = "FIRE SHOOTER!!!!"
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 299.0
+offset_top = 100.0
+offset_right = 346.0
+offset_bottom = 131.0
+text = "PLAY"
+
+[node name="Options" type="Button" parent="."]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 138.0
+offset_right = 362.0
+offset_bottom = 169.0
+text = "OPTIONS"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 176.0
+offset_right = 349.0
+offset_bottom = 207.0
+text = "QUIT"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

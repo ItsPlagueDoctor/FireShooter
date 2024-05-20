@@ -33,6 +33,24 @@ shape = SubResource("CircleShape2D_kql8l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area"]
 shape = SubResource("CircleShape2D_m0tng")
 
+[node name="Health" type="Label" parent="."]
+offset_left = -11.0
+offset_top = -39.0
+offset_right = 29.0
+offset_bottom = -16.0
+scale = Vector2(0.5, 0.5)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0.234922, 0.752859, 0.373472, 1)
+offset_left = -13.0
+offset_top = -23.0
+offset_right = 77.0
+offset_bottom = 4.0
+scale = Vector2(0.3, 0.3)
+max_value = 10.0
+step = 1.0
+show_percentage = false
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Detection Area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Detection Area" to="." method="_on_detection_area_body_exited"]
