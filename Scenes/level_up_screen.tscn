@@ -66,5 +66,6 @@ offset_right = 120.0
 offset_bottom = 162.0
 text = "Continue"
 
+[connection signal="pressed" from="FlameThrowerRange" to="." method="_on_flame_thrower_range_pressed"]
 [connection signal="pressed" from="Dmg" to="." method="_on_dmg_pressed"]
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

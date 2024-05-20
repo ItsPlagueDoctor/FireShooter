@@ -5,7 +5,6 @@ const jump = -500
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_chase = false
 
-
 var motion = Vector2()
 
 var move = true
@@ -22,9 +21,15 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	else:
+		velocity.y = 0
+		
 	if player_chase:
-		velocity = (mainCharacter.position - position).normalized() * speed
-		velocity = position.direction_to(mainCharacter.position) * speed
+		var direction = position.direction_to(mainCharacter.position)
+		direction.y = 0
+		velocity.x = direction.normalized().x * speed
+		#velocity = (mainCharacter.position - position).normalized() * speed
+		#velocity = position.direction_to(mainCharacter.position) * speed
 	move_and_slide()
 	
 

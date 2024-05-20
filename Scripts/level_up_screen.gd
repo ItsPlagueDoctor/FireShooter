@@ -17,3 +17,7 @@ func _on_continue_pressed():
 
 func _on_dmg_pressed():
 	GlobalVar.weapon_dmg_lvl = 2
+
+
+func _on_flame_thrower_range_pressed():
+	GlobalVar.flameThrowerRangeLvl = 2

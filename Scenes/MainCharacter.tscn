@@ -16,10 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://fioiqklqhekt" path="res://sprite/run-0005.png" id="13_chu7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itbwg"]
-size = Vector2(12, 15)
+size = Vector2(16, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5egb"]
-size = Vector2(18, 20)
+size = Vector2(16, 23)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_elylx"]
 animations = [{
@@ -84,7 +84,7 @@ animations = [{
 script = ExtResource("1_k02uv")
 
 [node name="Body" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_itbwg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -98,6 +98,7 @@ zoom = Vector2(3, 3)
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_x5egb")
 
 [node name="CoolDown" type="Timer" parent="."]
