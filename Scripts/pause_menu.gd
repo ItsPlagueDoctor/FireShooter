@@ -1,6 +1,6 @@
 extends Control
 
-@onready var MC = $"../../"
+@onready var MC = $"../"
 
 
 func _on_resume_pressed():
@@ -10,3 +10,5 @@ func _on_resume_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+

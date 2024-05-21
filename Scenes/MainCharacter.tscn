@@ -91,8 +91,6 @@ shape = SubResource("RectangleShape2D_itbwg")
 position = Vector2(-31, -32)
 zoom = Vector2(3, 3)
 
-[node name="pauseMenu" parent="Camera2D" instance=ExtResource("2_3thny")]
-
 [node name="flameThrower" parent="." instance=ExtResource("3_04pdh")]
 
 [node name="HitBox" type="Area2D" parent="."]
@@ -124,6 +122,17 @@ offset_bottom = 4.0
 scale = Vector2(0.3, 0.3)
 step = 5.0
 show_percentage = false
+
+[node name="pauseMenu" parent="." instance=ExtResource("2_3thny")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -39.0
+offset_top = -38.0
+offset_right = -39.0
+offset_bottom = -38.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="HitBox" to="." method="_on_hit_box_body_exited"]

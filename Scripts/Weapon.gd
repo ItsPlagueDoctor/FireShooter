@@ -20,6 +20,10 @@ func _physics_process(_delta):
 		flip_v = false
 	else:
 		flip_v = true
+	if Engine.time_scale == 0:
+		can_fire = false
+	else:
+		can_fire = true
 	if Input.is_action_pressed("shoot") and can_fire:
 		var flame_instance = flameThrowerFlame.instantiate()
 		flame_instance.rotation = rotation+randf_range(0, 0.1)

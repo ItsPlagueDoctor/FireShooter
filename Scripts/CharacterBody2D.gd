@@ -5,8 +5,7 @@ const jump = -500
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_chase = false
 var wander_movment_ready = true
-@onready var timer = $Timer
-@onready var timer_2 = $Timer2
+
 
 @onready var health_label = $Health
 @onready var health_bar = $HealthBar
