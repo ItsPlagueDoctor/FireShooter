@@ -10,7 +10,16 @@ var lvlPointsSpent = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	GlobalVar.lvlup += 1
+	if GlobalVar.lvlup == 2:
+		points.text = "YOU GOT MORE DMG!!!!!"
+		GlobalVar.weapon_dmg_lvl = 2
+	elif GlobalVar.lvlup == 3:
+		points.text = "MORE RANGEEEEEE!!!!!!"
+		GlobalVar.flameThrowerRangeLvl = 2
+	elif GlobalVar.lvlup == 4:
+		points.text = "DOUBLE JUMPPPP"
+		GlobalVar.jump_lvl = 2
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,31 +28,9 @@ func _process(delta):
 
 
 func _on_continue_pressed():
-	get_tree().change_scene_to_file("res://Levels/level_2.tscn")
-
-
-func _on_dmg_pressed():
-	if lvlPointsSpent < lvlPoints:
-		GlobalVar.weapon_dmg_lvl = 2
-		lvlPointsSpent += 1
-		lvlPoints -= 1
-		dmg_2.text = "Dmg Lvl " + str(GlobalVar.weapon_dmg_lvl)
-		points.text = "Points avilable: " + str(lvlPoints)
-
-
-func _on_flame_thrower_range_pressed():
-	if lvlPointsSpent < lvlPoints:
-		GlobalVar.flameThrowerRangeLvl = 2
-		lvlPointsSpent += 1
-		lvlPoints -= 1
-		flame_thrower_range.text = "Flame Thrower Range lvl " + str(GlobalVar.flameThrowerRangeLvl)
-		points.text = "Points avilable: " + str(lvlPoints)
-
-
-func _on_double_jump_pressed():
-	if lvlPointsSpent < lvlPoints:
-		GlobalVar.jump_lvl = 2
-		lvlPointsSpent += 1
-		lvlPoints -= 1
-		double_jump.text = "Double Jump Unlocked"
-		points.text = "Points avilable: " + str(lvlPoints)
+	if GlobalVar.lvlup == 2:
+		get_tree().change_scene_to_file("res://Levels/level_2.tscn")
+	elif GlobalVar.lvlup == 3:
+		get_tree().change_scene_to_file("res://Levels/level_3.tscn")
+	elif GlobalVar.lvlup == 4:
+		get_tree().change_scene_to_file("res://Levels/level_4.tscn")

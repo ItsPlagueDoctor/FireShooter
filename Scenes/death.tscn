@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcvv5iuktoog5"]
+
+[ext_resource type="Script" path="res://Scripts/Death.gd" id="1_2e53x"]
+[ext_resource type="Texture2D" uid="uid://bftwyq38wpbfs" path="res://New_Piskel-1.png_1.png" id="2_dm3vo"]
+
+[node name="Death" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2e53x")
+
+[node name="Restart" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 568.0
+offset_top = 354.0
+offset_right = 633.0
+offset_bottom = 385.0
+text = "Restart"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+z_index = 1
+position = Vector2(596, 280)
+scale = Vector2(0.10957, 0.102974)
+texture = ExtResource("2_dm3vo")
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

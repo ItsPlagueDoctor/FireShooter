@@ -8,6 +8,7 @@ var attackCoolDown = true
 
 var jump_count = 0
 var max_jumps = 1
+@onready var death = $Death
 
 @onready var health_label = $Health
 @onready var health_bar = $HealthBar
@@ -22,6 +23,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _ready():
+	Engine.time_scale = 1.0
 	pause_menu.hide()
 	health_label.text = str(health)
 	health_bar.value = health
@@ -66,8 +68,8 @@ func _physics_process(delta):
 	move_and_slide()
 	enemyAttack()
 	if health <= 0:
-		self.queue_free()
-		get_tree().reload_current_scene()
+		Engine.time_scale = 0
+		death.show()
 		
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()

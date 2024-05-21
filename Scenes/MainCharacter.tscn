@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8gl4uumt68j"]
+[gd_scene load_steps=19 format=3 uid="uid://c8gl4uumt68j"]
 
 [ext_resource type="Script" path="res://MainCharacter.gd" id="1_k02uv"]
 [ext_resource type="PackedScene" uid="uid://bit8lxu18q8rw" path="res://Scenes/pause_menu.tscn" id="2_3thny"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://deurie6x7cx1q" path="res://sprite/run-0003.png" id="11_56gk2"]
 [ext_resource type="Texture2D" uid="uid://cfhomtgnvuh56" path="res://sprite/run-0004.png" id="12_pqnrn"]
 [ext_resource type="Texture2D" uid="uid://fioiqklqhekt" path="res://sprite/run-0005.png" id="13_chu7h"]
+[ext_resource type="PackedScene" uid="uid://bcvv5iuktoog5" path="res://Scenes/death.tscn" id="15_r05h4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itbwg"]
 size = Vector2(16, 23)
@@ -133,6 +134,14 @@ offset_right = -39.0
 offset_bottom = -38.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Death" parent="." instance=ExtResource("15_r05h4")]
+visible = false
+offset_left = -1076.0
+offset_top = -530.0
+offset_right = -1076.0
+offset_bottom = -530.0
+scale = Vector2(1.75, 1.75)
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="HitBox" to="." method="_on_hit_box_body_exited"]
