@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://beoaf1eowv5j0"]
+
+[ext_resource type="Script" path="res://Scripts/LockedBoxes.gd" id="1_3rluk"]
+[ext_resource type="Texture2D" uid="uid://bnfwf8v1l6v2b" path="res://icon.svg" id="2_1yevx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh3in"]
+size = Vector2(129, 128)
+
+[node name="LockedBoxes" type="Node2D"]
+visible = false
+script = ExtResource("1_3rluk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1yevx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-0.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_lh3in")

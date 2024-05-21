@@ -31,6 +31,7 @@ shape = SubResource("CircleShape2D_kql8l")
 [node name="Detection Area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area"]
+visible = false
 shape = SubResource("CircleShape2D_m0tng")
 
 [node name="Health" type="Label" parent="."]

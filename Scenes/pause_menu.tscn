@@ -29,6 +29,6 @@ offset_right = 54.0
 offset_bottom = 64.0
 text = "Quit"
 
-[connection signal="pressed" from="Resume" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
