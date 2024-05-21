@@ -171,7 +171,7 @@ position = Vector2(6925, 785)
 position = Vector2(6638, 909)
 
 [node name="nextLevel" parent="." instance=ExtResource("8_mheem")]
-position = Vector2(8083, 757)
+position = Vector2(8079, 759)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_6apdl")]
 position = Vector2(27, -25)

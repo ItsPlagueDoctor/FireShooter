@@ -54,4 +54,4 @@ position = Vector2(1342, -14)
 position = Vector2(1725, -4)
 
 [node name="nextLevel" parent="." instance=ExtResource("4_68mo0")]
-position = Vector2(2712, -10)
+position = Vector2(2706, -24)

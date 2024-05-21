@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvoaup0h4bjra"]
+[gd_scene load_steps=15 format=3 uid="uid://bvoaup0h4bjra"]
 
 [ext_resource type="PackedScene" uid="uid://jgop248jmwb5" path="res://Scenes/tile_mapBasic.tscn" id="1_2x5b7"]
 [ext_resource type="PackedScene" uid="uid://c8gl4uumt68j" path="res://Scenes/MainCharacter.tscn" id="2_01hxv"]
 [ext_resource type="Script" path="res://Levels/kraken.gd" id="3_kxpvf"]
 [ext_resource type="Texture2D" uid="uid://bbuo4qw5m53pg" path="res://sprite/Layer 6.png" id="4_cmtjq"]
+[ext_resource type="Script" path="res://Scripts/Area2D2.gd" id="4_rm8ff"]
 [ext_resource type="Texture2D" uid="uid://duae47sangm74" path="res://sprite/Layer 1.png" id="5_pw5vm"]
 [ext_resource type="Texture2D" uid="uid://cg2nle0r1o4cf" path="res://sprite/Layer 2.png" id="6_1byhv"]
 [ext_resource type="Texture2D" uid="uid://5yqckb01uite" path="res://sprite/Layer 3.png" id="7_sn63j"]
+[ext_resource type="Script" path="res://Levels/Area2D2.gd" id="7_yp5y8"]
 [ext_resource type="Texture2D" uid="uid://o448dk7lusdh" path="res://sprite/Layer 5.png" id="8_pwmhc"]
 [ext_resource type="Texture2D" uid="uid://be4cwlo5qv4pk" path="res://sprite/e-0002.png" id="9_liv4k"]
 
@@ -56,6 +58,7 @@ position = Vector2(-198.988, 101.003)
 rotation = -0.374801
 scale = Vector2(0.618516, 0.547061)
 skew = -0.153777
+script = ExtResource("4_rm8ff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kraken/tent1/Area2D2"]
 position = Vector2(356.466, -34.1131)
@@ -73,6 +76,7 @@ position = Vector2(-198.988, 101.003)
 rotation = -0.374801
 scale = Vector2(0.618516, 0.547061)
 skew = -0.153777
+script = ExtResource("4_rm8ff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kraken/tent2/Area2D2"]
 position = Vector2(357.841, -20.2158)
@@ -91,6 +95,7 @@ position = Vector2(-198.988, 101.003)
 rotation = -0.374801
 scale = Vector2(0.618516, 0.547061)
 skew = -0.153777
+script = ExtResource("7_yp5y8")
 metadata/enemy = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kraken/tent3/Area2D2"]
@@ -110,6 +115,7 @@ position = Vector2(-198.988, 101.003)
 rotation = -0.374801
 scale = Vector2(0.618516, 0.547061)
 skew = -0.153777
+script = ExtResource("4_rm8ff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kraken/tent4/Area2D2"]
 position = Vector2(364.466, -3.29679)

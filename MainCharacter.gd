@@ -115,3 +115,15 @@ func pauseMenu():
 		
 func MainCharacter():
 	pass
+
+
+
+
+func _on_hit_box_area_entered(area):
+	if area.has_method("enemy"):
+		print("HIT")
+		inAttackRange = true
+
+
+func _on_hit_box_area_exited(area):
+	inAttackRange = false

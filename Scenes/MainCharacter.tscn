@@ -143,6 +143,10 @@ offset_right = -1076.0
 offset_bottom = -530.0
 scale = Vector2(1.75, 1.75)
 
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_exited" from="HitBox" to="." method="_on_hit_box_area_exited"]
+[connection signal="area_shape_entered" from="HitBox" to="." method="_on_hit_box_area_shape_entered"]
+[connection signal="area_shape_exited" from="HitBox" to="." method="_on_hit_box_area_shape_exited"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="HitBox" to="." method="_on_hit_box_body_exited"]
 [connection signal="timeout" from="CoolDown" to="." method="_on_cool_down_timeout"]
