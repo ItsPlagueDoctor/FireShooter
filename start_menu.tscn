@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://sereh0jaulg7"]
+[gd_scene load_steps=3 format=3 uid="uid://sereh0jaulg7"]
 
 [ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_dhu85"]
+[ext_resource type="AudioStream" uid="uid://cja1yvxios16k" path="res://jonas_blue.mp3" id="2_7luww"]
 
 [node name="Start_menu" type="Control"]
 layout_mode = 3
@@ -46,6 +47,11 @@ offset_top = 176.0
 offset_right = 349.0
 offset_bottom = 207.0
 text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7luww")
+volume_db = -43.099
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

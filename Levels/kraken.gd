@@ -15,6 +15,8 @@ var alive = true
 @onready var tent3 = $tent3
 @onready var tent4 = $tent4
 @onready var ex = $ex
+@onready var timer = $"../Timer"
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 
@@ -29,8 +31,9 @@ func damage():
 				if not alive:
 					health_label.queue_free()
 					health_bar.queue_free()
-					queue_free()
-					print("enemy has died")
+					self.position = Vector2(-1000,1000)
+					timer.start()
+					
 			elif health >  0:
 				print(health)
 				health_label.text = str(health)
@@ -98,3 +101,10 @@ func enemy():
 
 func _on_area_2d_2_area_entered(area):
 	print("damn")
+
+
+func _on_timer_timeout():
+	
+	get_tree().change_scene_to_file("res://Scenes/End.tscn")
+	queue_free()
+	print("enemy has died")

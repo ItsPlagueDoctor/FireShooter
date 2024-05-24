@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdpm4a70a6eoo"]
+[gd_scene load_steps=6 format=3 uid="uid://cdpm4a70a6eoo"]
 
 [ext_resource type="PackedScene" uid="uid://jgop248jmwb5" path="res://Scenes/tile_mapBasic.tscn" id="1_lpktc"]
 [ext_resource type="PackedScene" uid="uid://c8gl4uumt68j" path="res://Scenes/MainCharacter.tscn" id="2_ckqfk"]
 [ext_resource type="PackedScene" uid="uid://ca2cafgmhaj0c" path="res://Scenes/enemy.tscn" id="3_75uhf"]
 [ext_resource type="PackedScene" uid="uid://c0t38c004cgx2" path="res://Scenes/next_level.tscn" id="4_68mo0"]
+[ext_resource type="AudioStream" uid="uid://cja1yvxios16k" path="res://jonas_blue.mp3" id="5_0xill"]
 
 [node name="level_3" type="Node2D"]
 
@@ -55,3 +56,8 @@ position = Vector2(1725, -4)
 
 [node name="nextLevel" parent="." instance=ExtResource("4_68mo0")]
 position = Vector2(2706, -24)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0xill")
+volume_db = -43.099
+autoplay = true

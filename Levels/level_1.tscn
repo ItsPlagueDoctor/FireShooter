@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv8lffem86qon"]
+[gd_scene load_steps=12 format=3 uid="uid://dv8lffem86qon"]
 
 [ext_resource type="PackedScene" uid="uid://jgop248jmwb5" path="res://Scenes/tile_mapBasic.tscn" id="1_1e4p4"]
 [ext_resource type="PackedScene" uid="uid://c8gl4uumt68j" path="res://Scenes/MainCharacter.tscn" id="2_6apdl"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c0t38c004cgx2" path="res://Scenes/next_level.tscn" id="8_mheem"]
 [ext_resource type="PackedScene" uid="uid://beoaf1eowv5j0" path="res://Scenes/locked_boxes.tscn" id="8_x2fyh"]
 [ext_resource type="PackedScene" uid="uid://bertbkum1ilui" path="res://Scenes/unlock_block.tscn" id="9_qt1l2"]
+[ext_resource type="AudioStream" uid="uid://cja1yvxios16k" path="res://jonas_blue.mp3" id="11_xa21q"]
 
 [node name="level_1" type="Node2D"]
 
@@ -22,28 +23,32 @@ layer_0/tile_data = PackedInt32Array(-65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(165, 23)
+position = Vector2(317, 157)
+scale = Vector2(1.96077, 1.96077)
 texture = ExtResource("4_6slmn")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.1, 0.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(165, 23)
+position = Vector2(328, 163)
+scale = Vector2(1.90234, 1.90234)
 texture = ExtResource("5_j5rur")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(165, 23)
+position = Vector2(346, 146)
+scale = Vector2(2.03906, 2.03906)
 texture = ExtResource("6_trlfh")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2(165, 23)
+position = Vector2(364, 149)
+scale = Vector2(2.03906, 2.03906)
 texture = ExtResource("7_47r03")
 
 [node name="Label" type="Label" parent="."]
@@ -175,3 +180,8 @@ position = Vector2(8079, 759)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_6apdl")]
 position = Vector2(27, -25)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_xa21q")
+volume_db = -43.099
+autoplay = true
